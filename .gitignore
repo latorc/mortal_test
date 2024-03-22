@@ -1,0 +1,12 @@
+.vscode
+__pycache__
+
+/target
+*.dll
+*.exe
+*.so
+
+.ipynb_checkpoints
+*.ipynb
+
+/_draft
