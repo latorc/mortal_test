@@ -46,6 +46,11 @@ impl Bot {
     fn clone_py(&mut self, _py: Python<'_>) -> Result<Self> {
         Ok(self.clone())
     }
+
+    #[getter]
+    fn state(&self) -> PyResult<PlayerState> {
+        Ok(self.state.clone())
+    }
 }
 
 impl Bot {
