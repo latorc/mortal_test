@@ -8,11 +8,11 @@ cp target/release/riichi.dll libriichi/libriichi.pyd
 
 
 问题描述：
-Rust代码中，libriichi.mjai.bot(https://github.com/latorc/mortal_test/blob/main/libriichi/src/mjai/bot.rs)代码里面，
-struct Bot下添加了一个clone方法，目的是用于深度拷贝这个对象（递归拷贝所有子对象/变量），提供一个状态完全一样的对象复制。
-这个clone方法需要在python中可以调用。
+Rust代码中，libriichi.mjai.bot文件中 (https://github.com/latorc/mortal_test/blob/main/libriichi/src/mjai/bot.rs)
 
-问题：
-但是现在python中调用clone()方法会导致卡住，不返回。
+struct Bot下有一个clone方法，目的是用于深度拷贝/克隆这个对象（递归拷贝所有子对象/变量），提供一个状态完全一样的对象复制。
+这个clone方法需要在python中可以调用。现在的代码，在python中调用clone()方法会导致卡住，不返回。
 测试代码：test.py
+
+需求：修改rust代码（可能需要修改其他相关的文件），给struct Bot实现一个有效的，并且可以在Python中调用的clone方法
 
